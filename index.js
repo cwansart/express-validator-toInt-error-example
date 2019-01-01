@@ -13,7 +13,7 @@ app.get('/', checkSchema({
           if (v < 0 || v > 10) {
             throw new Error('limit must be between 0 and 10');
           }
-          return value;
+          return v; // RETURN THE SANITIZED NUMBER VALUE
         }
         throw new Error('Limit must be a number');
       }
