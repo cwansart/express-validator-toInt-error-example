@@ -1,0 +1,14 @@
+{
+  "name": "express-validator-int-schema",
+  "version": "1.0.0",
+  "description": "Example app for showing an error in schema validator of an int",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Christian Wansart",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-validator": "^5.3.1"
+  }
+}
