@@ -6,13 +6,16 @@ app.get('/', checkSchema({
   limit: {
     in: ['query'],
     optional: true,
-    toInt: true,
     custom: {
       options: value => {
-        if (value < 0 || value > 10) {
-          throw new Error('limit must be between 0 and 10');
+        const v = parseInt(value);
+        if (!isNaN(v)) {
+          if (v < 0 || v > 10) {
+            throw new Error('limit must be between 0 and 10');
+          }
+          return value;
         }
-        return value;
+        throw new Error('Limit must be a number');
       }
     }
   }
